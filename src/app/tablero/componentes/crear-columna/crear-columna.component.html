@@ -1,0 +1,9 @@
+<div class="contenedor">
+    <form [formGroup]="formulario">
+        <input formControlName="nombre" type="text" class="formulario-input" placeholder="Nombre Columna Nueva">
+        <button class="formulario-boton" cdkOverlayOrigin (click)="agregarColumna()"
+            mat-raised-button color="primary" [disabled]="!formulario.get('nombre')!.valid">
+            Insertar
+        </button>
+    </form>
+</div>

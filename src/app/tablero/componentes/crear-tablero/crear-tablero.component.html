@@ -1,0 +1,18 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Nombre:</label>
+      <input formControlName="name" type="text" id="name">
+    </div>
+    <div>
+      <label for="descripcion">Descripción:</label>
+      <input formControlName="descripcion" type="text" id="descripcion"/>
+    </div>
+    <div>
+      <label for="usuarioAsignado">Asignar a:</label>
+      <input formControlName="usuarioAsignado" type="text" id="usuarioAsignado" placeholder="ejemplo@gmail.com, siguiente@gmail.com..."/>
+    </div>
+
+    <button type="submit">Añadir</button>
+    <button type="button" (click)="cerrarFormulario()">Cerrar</button>
+  </form>
+  

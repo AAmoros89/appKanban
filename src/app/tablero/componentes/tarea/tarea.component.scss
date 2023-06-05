@@ -1,0 +1,60 @@
+.tarea {
+	background: white;
+	border-radius: 5px;
+	/* box-shadow: 0.1em 0.1em 0.5em lightgrey; */
+	color: #333;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 0 6px 0;
+	padding: 6px 6px 2px 8px;
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+	
+	&__urgente {
+		border-left: 5px solid rgb(182, 30, 30);
+	}
+
+	&__moderada {
+		border-left: 5px solid rgb(243, 180, 34);
+	}
+
+	&__baja {
+		border-left: 5px solid rgb(56, 171, 21);
+	}
+
+	&__titulo {
+		flex: 1 1 40%;
+		font-weight: bold;
+		text-align: center;
+	}
+	&__icono {
+		flex: 1 1 20%;
+		text-align: left;
+		&__urgente{
+			color:rgb(182, 30, 30);
+		}
+		&__moderada{
+			color:rgb(243, 180, 34);
+		}
+		&__baja{
+			color:rgb(56, 171, 21);
+		}
+	}
+	&__fecha, &__descripcion {
+		flex: 1 1 100%;
+	}
+
+	&__editar {
+		flex: 1 1 20%;
+		text-align: right;
+	}
+	&__descripcion {
+		overflow: auto;
+	}
+}
+
+#creador{
+	margin-left: 12px;
+	margin-top: 12px;
+	font-weight: bold;
+	color: gray;
+}

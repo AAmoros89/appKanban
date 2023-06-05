@@ -1,0 +1,27 @@
+<div
+  class="tarea"
+  id="tarea_{{task.id}}"
+  [ngClass]="{'tarea__urgente': task.prioridad=== 'urgente', 'tarea__moderada': task.prioridad === 'moderada', 'tarea__baja': task.prioridad === 'baja'}"
+  >
+  <div class="tarea__icono">
+    <mat-icon class="tarea__icono__urgente" aria-hidden="false" aria-label="urgent icon" *ngIf="task.prioridad === 'urgente'">notifications_active</mat-icon>
+    <mat-icon class="tarea__icono__moderada" aria-hidden="false" aria-label="medium icon" *ngIf="task.prioridad === 'moderada'">notifications</mat-icon>
+    <mat-icon class="tarea__icono__baja" aria-hidden="false" aria-label="medium icon" *ngIf="task.prioridad === 'baja'">notifications_none</mat-icon>
+  </div>
+  <h3 class="tarea__titulo"> {{ task.nombre.toUpperCase() }}</h3>
+  <h3 class="tarea__titulo"> {{ task.fechaCreacion| date: 'dd/MM/yyyy' }}</h3>  <!-- -Tarea {{indice+1}}: -->
+  <p class="tarea__descripcion"><strong>Responsable:</strong> {{task.usuarioAsignado}}</p>
+  <p class="tarea__fecha"><strong>Finalización:</strong> {{ task.fecha | date }}</p>
+  <p class="tarea__descripcion"><strong>Desc.: </strong>{{task.descripcion}}</p>
+
+  <p id="creador">- {{ task.creador }} -</p>
+  <div class="tarea__editar">
+  <button  matTooltip="Editar tarea" matTooltipClass="custom-tooltip-blue" matTooltipPosition="above" mat-icon-button (click)="actualizarTarea(task)">
+    <mat-icon aria-label="icon-button to edit">edit</mat-icon>
+  </button>
+
+  <button  matTooltip="Eliminar tarea" matTooltipPosition="above" mat-icon-button (click)="eliminarTarea(task)">
+    <mat-icon aria-label="icon-button to remove">delete</mat-icon>
+  </button>
+  </div>
+</div>

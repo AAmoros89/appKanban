@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+//se hace más pequeño la ventana de alerta para todo el proyecto.
+.swal2-popup{
+    width: 20em!important;
+  }

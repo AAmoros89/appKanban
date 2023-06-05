@@ -1,0 +1,73 @@
+<main class="home">
+  <br>
+  <br>
+  <h2 class="home__h2">¡Bienvenido/a de nuevo {{userEmail}}!</h2>
+  <h2 class="home__h2">Actualmente tienes las siguientes tareas pendientes ordenadas por prioridad:</h2>
+
+  <section>
+    <h3 class="home__h3">Tareas de prioridad urgente que tienes asignadas: </h3>
+    <h3 *ngIf="arrayConTareasUrgenteSuyas.length===0" class="home__h2">Actualmente no tienes tareas pendientes</h3>
+    <div class="tareas-container">
+      <div class="tarea" *ngFor="let tarea of arrayConTareasUrgenteSuyas"
+        [ngClass]="{'tarea__urgente': tarea.prioridad== 'urgente'}">
+        <div class="tarea__icono">
+          <mat-icon class="tarea__icono__urgente" aria-hidden="false" aria-label="urgent icon"
+            *ngIf="tarea.prioridad === 'urgente'">notifications_active</mat-icon>
+          <mat-icon class="tarea__icono__moderada" aria-hidden="false" aria-label="medium icon"
+            *ngIf="tarea.prioridad === 'moderada'">notifications</mat-icon>
+          <mat-icon class="tarea__icono__baja" aria-hidden="false" aria-label="medium icon"
+            *ngIf="tarea.prioridad === 'baja'">notifications_none</mat-icon>
+        </div>
+        <h3 class="tarea__titulo">{{ tarea.nombre }}</h3>
+        <h3 class="tarea__titulo"> {{ tarea.fechaCreacion| date: 'dd/MM/yyyy' }} </h3>
+        <p class="tarea__fecha"><strong>Fecha de finalización:</strong> {{ tarea.fecha | date }}</p>
+        <p class="tarea__descripcion"><strong>Desc.</strong>{{tarea.descripcion}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3 class="moderada">Tareas de prioridad moderada que tienes asignadas: </h3>
+    <h3 *ngIf="arrayConTareasModeradasSuyas.length===0" class="home__h2">Actualmente no tienes tareas pendientes</h3>
+    <div class="tareas-container">
+      <div class="tarea" *ngFor="let tarea of arrayConTareasModeradasSuyas"
+        [ngClass]="{'tarea__moderada': tarea.prioridad === 'moderada'}">
+        <div class="tarea__icono">
+          <mat-icon class="tarea__icono__urgente" aria-hidden="false" aria-label="urgent icon"
+            *ngIf="tarea.prioridad === 'urgente'">notifications_active</mat-icon>
+          <mat-icon class="tarea__icono__moderada" aria-hidden="false" aria-label="medium icon"
+            *ngIf="tarea.prioridad === 'moderada'">notifications</mat-icon>
+          <mat-icon class="tarea__icono__baja" aria-hidden="false" aria-label="medium icon"
+            *ngIf="tarea.prioridad === 'baja'">notifications_none</mat-icon>
+        </div>
+        <h3 class="tarea__titulo">{{ tarea.nombre }}</h3>
+        <h3 class="tarea__titulo"> {{ tarea.fechaCreacion| date: 'dd/MM/yyyy' }} </h3>
+        <p class="tarea__fecha"><strong>Fecha de finalización:</strong> {{ tarea.fecha | date }}</p>
+        <p class="tarea__descripcion"><strong>Desc.</strong>{{tarea.descripcion}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3 class="baja">Tareas de prioridad baja que tienes asignadas: </h3>
+    <h3 *ngIf="arrayConTareasBajaSuyas.length===0" class="home__h2">Actualmente no tienes tareas pendientes</h3>
+    <div class="tareas-container">
+      <div class="tarea" *ngFor="let tarea of arrayConTareasBajaSuyas"
+        [ngClass]="{'tarea__baja': tarea.prioridad=== 'baja'}">
+        <div class="tarea__icono">
+          <mat-icon class="tarea__icono__urgente" aria-hidden="false" aria-label="urgent icon"
+            *ngIf="tarea.prioridad === 'urgente'">notifications_active</mat-icon>
+          <mat-icon class="tarea__icono__moderada" aria-hidden="false" aria-label="medium icon"
+            *ngIf="tarea.prioridad === 'moderada'">notifications</mat-icon>
+          <mat-icon class="tarea__icono__baja" aria-hidden="false" aria-label="medium icon"
+            *ngIf="tarea.prioridad === 'baja'">notifications_none</mat-icon>
+        </div>
+        <h3 class="tarea__titulo">{{ tarea.nombre }}</h3>
+        <h3 class="tarea__titulo"> {{ tarea.fechaCreacion| date: 'dd/MM/yyyy' }} </h3>
+        <p class="tarea__fecha"><strong>Fecha de finalización:</strong> {{ tarea.fecha | date }}</p>
+        <p class="tarea__descripcion"><strong>Desc.</strong>{{tarea.descripcion}}</p>
+      </div>
+    </div>
+  </section>
+
+</main>

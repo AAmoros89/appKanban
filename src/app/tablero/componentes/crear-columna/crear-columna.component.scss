@@ -1,0 +1,28 @@
+.contenedor{
+    padding-top: 60px;
+}
+
+.formulario-input {
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 16px;
+    margin-left: 17px;
+  }
+  
+  .formulario-boton {
+    color: #fff;
+    //padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-left: 8px;
+    height: 32px;
+  }
+  
+  .formulario-label{
+    font-size: 20px;
+    margin-left: 16px;
+  }

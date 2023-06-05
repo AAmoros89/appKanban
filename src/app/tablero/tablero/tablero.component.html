@@ -1,0 +1,15 @@
+<main class="tablero" cdkDropListGroup><!-- *ngIf="lists.length > 0">-->
+  <div class="h2" *ngIf="lists && lists.length === 0">
+    <br><br><br><br>
+    <h2>No tienes columnas asignadas en tu tablero, empieza creando la primera.</h2>
+  </div>
+  <div class="flex">
+    <app-crear-columna></app-crear-columna>
+  </div>
+  <div>
+    <section class="tablero__lista">
+      <app-lista *ngFor="let list of lists; let i=index" [list]="list" [indice]="i"
+        (editTask)="displayOverlay($event)"></app-lista>
+    </section>
+  </div>
+</main>

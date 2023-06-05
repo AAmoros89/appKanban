@@ -1,0 +1,34 @@
+<div class="contenedor">
+    <button class="contenedor-boton" cdkOverlayOrigin mat-raised-button color="primary" (click)="abrirModal()">
+        Insertar Tabla
+    </button>
+</div>
+
+<div class="lista-tableros">
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Acción</th>
+                <th>Miembros</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tabla of tablas">
+                <td>{{ tabla.id }}</td>
+                <td>{{ tabla.nombre }}</td>
+                <td>{{ tabla.descripcion }}</td>
+                <td>
+                    <mat-icon [routerLink]="['/tablero', tabla.id]">forward</mat-icon>
+                    <mat-icon (click)="actualizarTabla(tabla)">edit</mat-icon>
+                    <mat-icon (click)="eliminarTabla(tabla)">delete</mat-icon>
+                </td>
+                <td>
+                    <mat-icon (click)="mostrarAlerta(tabla.id)">group</mat-icon>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

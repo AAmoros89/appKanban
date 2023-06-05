@@ -1,0 +1,41 @@
+<div
+	class="lista"
+	cdkDropList
+	[cdkDropListData]="list.tareas"
+	(cdkDropListDropped)="drop($event)"
+	
+>
+	<div class="menuColumna">
+		<div>
+			<h3 class="lista__titulo"><strong>{{list.nombre.toUpperCase()}}</strong></h3>	<!-- {{indice+1}}: -->
+		</div>
+		<div class="menuColumna">
+			<div class="cursor">
+				<button mat-icon-button class="toolbar__menu__icon" aria-label="Board option"  (click)="addTareaEnColuma(list)">
+					<mat-icon>add</mat-icon>
+				  </button>
+			</div>
+			<div class="cursor">
+				<button mat-icon-button class="toolbar__menu__icon" aria-label="Board option"  (click)="actualizaColumna(list)">
+					<mat-icon>edit</mat-icon>
+				  </button>
+			</div>
+			<div class="cursor">
+				<button mat-icon-button class="toolbar__menu__icon" aria-label="Board option" (click)="eliminarColumna(list)">
+					<mat-icon>delete</mat-icon>
+				  </button>
+			</div>
+		</div>	
+	</div>
+	
+	
+	<div class="lista__tareas">
+		<app-tarea
+ 			*ngFor="let task of list.tareas; let i=index" [indice]="i"
+			[task]="task"
+ 			[list]="list"
+ 			(editTask)="handleEdit(task)"
+ 			cdkDrag
+		></app-tarea>
+	</div>
+</div>

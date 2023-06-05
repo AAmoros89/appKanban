@@ -1,0 +1,24 @@
+
+<mat-toolbar color="primary" class="toolbar">
+    <span>Tablero Kanban</span>
+    <span class="toolbar__spacer"></span>
+    <nav class="toolbar__menu">
+      <ul>
+        <li>
+          <button mat-icon-button class="toolbar__menu__icon favorite-icon" aria-label="Home option" routerLink="/home">
+            <mat-icon>home</mat-icon>
+          </button>
+        </li>
+        <li>
+          <button mat-icon-button class="toolbar__menu__icon" aria-label="Board option" routerLink="/lista">
+            <mat-icon>view_column</mat-icon>
+          </button>
+        </li>
+        <li>
+          <button mat-icon-button class="toolbar__menu__icon" aria-label="Board option" (click)="logOut()">
+            <mat-icon>logout</mat-icon>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mat-toolbar>

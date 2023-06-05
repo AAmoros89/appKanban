@@ -1,0 +1,52 @@
+.contenedor {
+  padding-top: 60px;
+}
+
+.contenedor-boton {
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  margin-left: 1em;
+  background-color: #3F51B5;
+}
+
+//para la tabla
+.lista-tableros{
+  padding: 50px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+table{
+  background-color: #d5e2ee;
+  text-align: left;
+  border-collapse:collapse; /*quitar los bordes de la tabla*/
+  width: 100%;
+  max-width: 100%;
+}
+
+th, td {	
+  padding: 12px; /*ajustar el espaciado entre las filas y columnas*/
+}
+mat-icon{
+  margin-right: 10px;
+  color:#3F51B5;
+  cursor: pointer
+}
+
+thead{
+  background-color: #3F51B5;
+  color: white;
+}
+
+tr:nth-child(even){
+  background-color:#e8f2fd;
+}
+
+tr:hover td{
+  background-color: #a9c2f4;//#3F51B5;
+  color: white;
+}

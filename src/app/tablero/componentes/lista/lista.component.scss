@@ -1,0 +1,31 @@
+.lista {
+    background-color: #e8eff9ad;
+    border-radius: 10px;
+    box-shadow: 0.1em 0.1em 0.5em lightgrey;
+    height: 70vh;
+    margin: 5px;
+    padding: 1em;
+    width: 325px;
+      
+    &__titulo {
+      margin: 0;
+      padding: 16px 0;
+    }
+    
+    &__tareas {
+      height: 60vh;
+      overflow-y: auto;
+    }
+  }
+
+  .menuColumna{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+
+  .cursor {
+    cursor: pointer;
+  }

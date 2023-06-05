@@ -1,0 +1,1 @@
+export * from './servicios/servicio-tablero.service';

@@ -1,0 +1,19 @@
+.tablero {
+    &__lista {
+      display: flex;
+      //height: 480px;
+      height: 80vh;
+      overflow-x: auto;
+      padding: 0 1em;
+      width: max-content; /* establece el ancho máximo del contenedor */
+      overflow: hidden;
+    }
+  }
+  
+  .flex{
+    display: flex;
+  }
+  
+  .h2{
+    margin-left: 1rem;
+  }

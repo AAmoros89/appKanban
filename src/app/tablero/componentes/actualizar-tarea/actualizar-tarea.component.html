@@ -1,0 +1,30 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input formControlName="nombre" type="text" id="nombre" placeholder="Nombre de la tarea" />
+  </div>
+  <div>
+    <label for="descripcion">Descripción:</label>
+    <input formControlName="descripcion" type="text" id="descripcion" placeholder="breve desripción de la tarea" />
+  </div>
+  <div>
+    <label for="usuarioAsignado">Asignar a:</label>
+    <input formControlName="usuarioAsignado" type="text" id="usuarioAsignado"
+      placeholder="Escribe el mail del responsable" />
+  </div>
+  <div>
+    <label for="prioridad">Prioridad:</label>
+    <select formControlName="prioridad" type="select" id="prioridad">
+      <option>urgente</option>
+      <option>moderada</option>
+      <option>baja</option>
+    </select>
+  </div>
+  <div>
+    <label for="fecha">Fecha Finalización:</label>
+    <input formControlName="fecha" type="date" id="fecha" />
+  </div>
+  <button type="submit">Enviar</button>
+  <button type="button" (click)="cerrarFormulario()">Cerrar</button>
+</form>
+  
